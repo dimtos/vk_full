@@ -120,7 +120,7 @@ server:route( { path = '/kv/*key', method = 'PUT' },
 	end
 )
 
-server:route( { path = '/kv/*key', method = 'POST' },
+server:route( { path = '/kv', method = 'POST' },
 	function(req)
 		local ok, body, resp = pcall( req.json, req )
 		if not ok or body.key == nil or body.value == nil then
